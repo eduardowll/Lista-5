@@ -1,0 +1,49 @@
+/*
+#include <iostream>
+using namespace std;
+
+/*
+Escreva um algoritmo que leia uma matriz M(5,5) e calcula as somas abaixo, escreva essas somas e a matriz.
+a) da linha 4 de M
+b) da coluna 2 de M
+c) da diagonal principal
+d) da diagonal secundária
+e) de todos os elementos da matriz M
+*/
+
+int main(){
+	
+	int m[5][5], somatotal = 0, somal4 = 0, somac2 = 0, somadgprinc = 0, somadgsec = 0;
+	
+	for(int i = 0; i < 5; i++){
+		for(int j = 0; j < 5; j++){
+			cout << "\tElemento[" << i + 1 << "][" << j + 1 << "]: ";
+			cin >> m[i][j];
+			somatotal += m[i][j];
+		}
+	}
+	for(int i = 0; i < 5; i++){
+		for(int j = 0; j < 5; j++){
+			if(j == 4){
+				somal4 += m[i][j];
+			}
+			if(i == 2){
+				somac2 += m[i][j];
+			}
+			if(i == j){
+				somadgprinc += m[i][j];
+			}
+			if(i + j == 4){
+				somadgsec += m[i][j];	
+			}
+		}
+	}
+	cout << "a) soma da linha 4 de M = " << somal4; 
+	cout << "\nb) da coluna 2 de M = " << somac2;
+	cout << "\nc) da diagonal principal = " << somadgprinc;
+	cout << "\nd) da diagonal secundaria = " << somadgsec;
+	cout << "\ne) de todos os elementos da matriz M = " << somatotal;
+	
+	
+	
+}

@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia uma matriz M(6,6) e um valor A inteiro e multiplique a matriz M pelo valor A
+inserindo os resultados em um vetor de V(36). Ao final, escreva o vetor V. 
+*/
+
+int main(){
+	
+	int const tam = 36;
+	int m[6][6], v[tam], x, i = 0;
+	
+	for(int l = 0; l < 6; l++){
+		for(int c = 0; c < 6; c++){
+			cout << "\tDigite o elemento da linha " << l + 1 << " e da coluna " << c + 1 << " da matriz: ";
+			cin >> m[l][c];
+		}
+	}
+	cout << "\tDigite o numero que ira multiplicar a matriz: ";
+	cin >> x;
+	for(int l = 0; l < 6; l++){
+		for(int c = 0; c < 6; c++){
+			v[i] = x * m[l][c];
+			i++;
+		}
+	}
+	cout << "\n\tVetor resultante: ";
+	for(i = 0; i < tam; i++){
+		cout << v[i] << " ";
+	}
+}

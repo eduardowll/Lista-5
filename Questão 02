@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+/*
+Escreva um algoritmo que leia um número inteiro A e uma matriz M (30,30) de inteiros. Conte quantos valores
+da matriz M são iguais a A. Crie, a seguir, uma matriz X contendo todos os elementos de M diferentes de A
+(quando for igual a A, insira um 0). Mostre os resultados.
+*/
+
+int main(){
+	
+	int ma[30][30], mb[30][30], x, i = 0;
+	
+	cout << "\n\tDigite um numero inteiro: ";
+	cin >> x;
+	for(int l = 0; l < 30; l++){
+		for(int c = 0; c < 30; c++){
+			cout << "\tDigite o elemento da linha " << l + 1 << " e da coluna " << c + 1 << " da matriz: ";
+			cin >> ma[l][c];
+			if(x == ma[l][c]){
+				i++;
+			}
+		}
+	}
+	for(int l = 0; l < 30; l++){
+		for(int c = 0; c < 30; c++){
+			mb[l][c] = ma[l][c];
+			if(x == ma[l][c]){
+				mb[l][c] = 0;
+			}
+		}
+	}
+	cout << "\n\tMatriz resultante: \n";
+	for(int l = 0; l < 30; l++){
+		cout << "\t";
+		for(int c = 0; c < 30; c++){
+			cout << ma[l][c] << " ";
+		}
+		cout << "\n";
+	}
+	cout << "\tNumero de vezes que x se repete na matriz: " << i;
+}
